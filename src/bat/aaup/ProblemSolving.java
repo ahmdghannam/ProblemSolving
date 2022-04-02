@@ -99,6 +99,9 @@ public class ${NAME} {
             temp[i- start]= a[i];
         }
     }
+    private static boolean isEven(int num){
+        return ((num & 1) == 0 ?  true : false );
+    }
     private static void countSort(int[] arr)
     {
         int max = Arrays.stream(arr).max().getAsInt();
