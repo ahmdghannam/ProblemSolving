@@ -8,6 +8,7 @@ package bat.aaup;
  * ProblemLink: 
  */
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Arrays;
@@ -87,7 +88,7 @@ public class ${NAME} {
 
         System.out.println();
     }
-    static boolean isSorted(ArrayList<Integer> array) {
+    private static boolean isSorted(ArrayList<Integer> array) {
         for (int i = 0; i < array.size() - 1; i++) {
             if (array.get(i) > array.get(i + 1))
                 return false;
@@ -103,11 +104,15 @@ public class ${NAME} {
         return ((num & 1) == 0 ?  true : false );
     }
     /* Method to check if x is power of 2*/
-    static boolean isPowerOfTwo (int x)
-    {
-        /* First x in the below expression is
-        for the case when x is 0 */
+    private static boolean isPowerOfTwo (int x){
         return x!=0 && ((x&(x-1)) == 0);   
+    }
+    //Calculating the number of digits
+    private static int numOfDigits (int num){
+        return (int) Math.floor(Math.log10(num)) + 1;
+    }
+    private static boolean isPrime(int a){
+        return BigInteger.valueOf(a).isProbablePrime(1);
     }
     private static void countSort(int[] arr)
     {
