@@ -114,6 +114,12 @@ public class ${NAME} {
     private static boolean isPrime(int a){
         return BigInteger.valueOf(a).isProbablePrime(1);
     }
+    public static int gcd(int a, int b){
+        BigInteger b1 = BigInteger.valueOf(a);
+        BigInteger b2 = BigInteger.valueOf(b);
+        BigInteger gcd = b1.gcd(b2);
+        return gcd.intValue();
+    }
     private static void countSort(int[] arr)
     {
         int max = Arrays.stream(arr).max().getAsInt();
