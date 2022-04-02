@@ -10,6 +10,8 @@ package bat.aaup;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Arrays;
+import java.util.Collections;
 import static java.lang.Integer.parseInt;
 import static java.lang.Long.parseLong;
 import static java.lang.System.exit;
@@ -95,6 +97,53 @@ public class ${NAME} {
     private static void copyArrays(int[] a, int start, int end, int[] temp) {
         for (int i = start; i <= end; i++) {
             temp[i- start]= a[i];
+        }
+    }
+    private static void countSort(int[] arr)
+    {
+        int max = Arrays.stream(arr).max().getAsInt();
+        int min = Arrays.stream(arr).min().getAsInt();
+        int range = max - min + 1;
+        int count[] = new int[range];
+        int output[] = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            count[arr[i] - min]++;
+        }
+
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            output[count[arr[i] - min] - 1] = arr[i];
+            count[arr[i] - min]--;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = output[i];
+        }
+    }
+    private static void countSort(ArrayList<Integer> arr) {
+        int max = Collections.max(arr);
+        int min = Collections.min(arr);
+        int range = max - min + 1;
+        int count[] = new int[range];
+        int output[] = new int[arr.size()];
+        for (int i = 0; i < arr.size(); i++) {
+            count[arr.get(i) - min]++;
+        }
+
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        for (int i = arr.size() - 1; i >= 0; i--) {
+            output[count[arr.get(i) - min] - 1] = arr.get(i);
+            count[arr.get(i) - min]--;
+        }
+
+        for (int i = 0; i < arr.size(); i++) {
+            arr.set(i,output[i]);
         }
     }
 }
