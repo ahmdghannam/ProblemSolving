@@ -36,6 +36,15 @@ public class ProblemSolving {
 
         System.out.println();
     }
+    public static void printArray(int[] a) {
+
+        for (int i = 0; i < a.length; i++) {
+            Integer y = a[i];
+            System.out.print(y + "\t");
+        }
+
+        System.out.println();
+    }
     static boolean isSorted(ArrayList<Integer> array) {
         for (int i = 0; i < array.size() - 1; i++) {
             if (array.get(i) > array.get(i + 1))
@@ -48,4 +57,5 @@ public class ProblemSolving {
             temp[i- start]= a[i];
         }
     }
+
 }
