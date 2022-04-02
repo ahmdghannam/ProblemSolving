@@ -1,5 +1,12 @@
 package bat.aaup;
 
+
+/**
+ * User: ${USER}
+ * Date: ${DATE}
+ * Time: ${TIME}
+ */
+
 import java.util.ArrayList;
 import java.util.Random;
 import static java.lang.Integer.parseInt;
@@ -12,7 +19,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-public class ProblemSolving {
+public class ${NAME} {
 
     static void solve() throws Exception {
         
